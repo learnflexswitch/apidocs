@@ -1,0 +1,301 @@
+OPTICD Model Objects
+============================================
+
+*state/DWDMModuleNwIntf*
+------------------------------------
+
+- **ModuleId**
+	- **Data Type**: uint8
+	- **Description**: DWDM Module identifier.
+	- This parameter is key element.
+- **NwIntfId**
+	- **Data Type**: uint8
+	- **Description**: DWDM Module network interface identifier.
+	- This parameter is key element.
+- **MinChromDispOverPMInt**
+	- **Data Type**: int32
+	- **Description**: Current RX chromatic dispersion over the last PM interval for the DWDM module network interface.
+- **AvgBEROverPMInterval**
+	- **Data Type**: float64
+	- **Description**: Average value of BER over the last PM interval for the DWDM module network interface.
+- **AvgChromDispOverPMInt**
+	- **Data Type**: int32
+	- **Description**: Average RX chromatic dispersion over the last PM interval for the DWDM module network interface.
+- **TxChanGridSpacing**
+	- **Data Type**: string
+	- **Description**: The channel grid spacing used for this network interface in GHz.
+- **UncorrectableFECBlkCntOverPMInt**
+	- **Data Type**: float64
+	- **Description**: Average value of uncorrectable FEC code block count over the last PM interval.
+- **CurrChromDisp**
+	- **Data Type**: int32
+	- **Description**: Current RX chromatic dispersion for the DWDM module network interface.
+- **MaxBEROverPMInterval**
+	- **Data Type**: float64
+	- **Description**: Maximum value of BER over the last PM interval for the DWDM module network interface.
+- **MinBEROverPMInterval**
+	- **Data Type**: float64
+	- **Description**: Minimum value of BER over the last PM interval for the DWDM module network interface.
+- **CurrentBER**
+	- **Data Type**: float64
+	- **Description**: Current value of BER on the DWDM module network interface.
+- **MaxChromDispOverPMInt**
+	- **Data Type**: int32
+	- **Description**: Current RX chromatic dispersion over the last PM interval for the DWDM module network interface.
+- **PRBSRxErrCnt**
+	- **Data Type**: float64
+	- **Description**: RX PRBS error count for network interface.
+- **RxPower**
+	- **Data Type**: float64
+	- **Description**: Current RX power for the DWDM module network interface.
+- **ChanFrequency**
+	- **Data Type**: float64
+	- **Description**: Channel frequency corresponding to selected channel number for the DWDM module network interface.
+- **CurrUncorrectableFECBlkCnt**
+	- **Data Type**: float64
+	- **Description**: Current value of uncorrectable FEC code block count.
+
+
+*config/DWDMModule*
+------------------------------------
+
+- **ModuleId**
+	- **Data Type**: uint8
+	- **Description**: DWDM Module identifier.
+	- This parameter is key element.
+- **EnableExtPMTickSrc**
+	- **Data Type**: bool
+	- **Description**: Enable/Disable external tick source for performance monitoring.
+	- **Default**: false
+- **IndependentLaneMode**
+	- **Data Type**: bool
+	- **Description**: Network lane configuration for the DWDM Module. true-Independent lanes.
+	- **Default**: true
+- **PMInterval**
+	- **Data Type**: uint8
+	- **Description**: Performance monitoring interval.
+	- **Default**: 1
+- **AdminState**
+	- **Data Type**: string
+	- **Description**: Reset state of this dwdm module (false (Reset deasserted).
+	- **Default**: DOWN
+
+
+*config/DWDMModuleNwIntf*
+------------------------------------
+
+- **NwIntfId**
+	- **Data Type**: uint8
+	- **Description**: DWDM Module network interface identifier.
+	- This parameter is key element.
+- **ModuleId**
+	- **Data Type**: uint8
+	- **Description**: DWDM Module identifier.
+	- This parameter is key element.
+- **TxPower**
+	- **Data Type**: float64
+	- **Description**: Transmit output power for this network interface in dBm.
+	- **Default**: 0
+- **TxPulseShapeFltrRollOff**
+	- **Data Type**: float64
+	- **Description**: TX pulse shape filter roll off factor.
+	- **Default**: 0.301
+- **ClntIntfIdToTributary1Map**
+	- **Data Type**: uint8
+	- **Description**: Client interface ID to map to network interface tributary 1.
+- **FECMode**
+	- **Data Type**: string
+	- **Description**: DWDM Module network interface FEC mode.
+	- **Default**: 15%SDFEC
+- **ModulationFmt**
+	- **Data Type**: string
+	- **Description**: Modulation format to use for this network interface.
+	- **Default**: 16QAM
+- **RxPRBSPattern**
+	- **Data Type**: string
+	- **Description**: PRBS pattern to use for checker.
+	- **Default**: 2^31
+- **TxPRBSInvertPattern**
+	- **Data Type**: bool
+	- **Description**: Generate inverted PRBS polynomial pattern.
+	- **Default**: true
+- **AdminState**
+	- **Data Type**: string
+	- **Description**: Administrative state of this network interface.
+	- **Default**: UP
+- **ChannelNumber**
+	- **Data Type**: uint8
+	- **Description**: TX Channel number to use for this network interface.
+	- **Default**: 48
+- **RxPRBSInvertPattern**
+	- **Data Type**: bool
+	- **Description**: Check against inverted PRBS polynomial pattern.
+	- **Default**: true
+- **DiffEncoding**
+	- **Data Type**: bool
+	- **Description**: Control to enable/disable DWDM Module network interface encoding type.
+	- **Default**: true
+- **EnableRxPRBSChecker**
+	- **Data Type**: bool
+	- **Description**: Enable RX PRBS checker.
+	- **Default**: false
+- **EnableTxPRBS**
+	- **Data Type**: bool
+	- **Description**: Enable TX PRBS generation on this network interface.
+	- **Default**: false
+- **TxPowerRampdBmPerSec**
+	- **Data Type**: float64
+	- **Description**: Rate of change of tx power on this network interface.
+	- **Default**: 1
+- **TxPulseShapeFltrType**
+	- **Data Type**: string
+	- **Description**: TX pulse shaping filter type.
+	- **Default**: RootRaisedCos
+- **ClntIntfIdToTributary0Map**
+	- **Data Type**: uint8
+	- **Description**: Client interface ID to map to network interface tributary 0.
+- **TxPRBSPattern**
+	- **Data Type**: string
+	- **Description**: Pattern to use for TX PRBS generation.
+	- **Default**: 2^31
+
+
+*state/DWDMModuleNwIntfPM*
+------------------------------------
+
+- **Class**
+	- **Data Type**: string
+	- **Description**: Class of PM Data.
+	- This parameter is key element.
+	- **Default**: CLASS-A
+	- **Possible Values**: CLASS-A, CLASS-B, CLASS-B
+- **ModuleId**
+	- **Data Type**: uint8
+	- **Description**: DWDM Module identifier.
+	- This parameter is key element.
+- **NwIntfId**
+	- **Data Type**: uint8
+	- **Description**: DWDM Module network interface identifier.
+	- This parameter is key element.
+- **Resource**
+	- **Data Type**: string
+	- **Description**: Opticd resource name for which PM Data is required.
+	- This parameter is key element.
+- **Type**
+	- **Data Type**: string
+	- **Description**: Min/Max/Avg.
+	- This parameter is key element.
+- **Data**
+	- **Data Type**: DWDMModulePMData
+	- **Description**: .
+
+
+*config/DWDMModuleClntIntf*
+------------------------------------
+
+- **ClntIntfId**
+	- **Data Type**: uint8
+	- **Description**: DWDM Module client interface identifier.
+	- This parameter is key element.
+- **ModuleId**
+	- **Data Type**: uint8
+	- **Description**: DWDM Module identifier.
+	- This parameter is key element.
+- **HostRxSerializerTap2Delay**
+	- **Data Type**: uint8
+	- **Description**: Host RX Serializer tap 2 control.
+	- **Default**: 5
+- **RxPRBSPattern**
+	- **Data Type**: string
+	- **Description**: RX PRBS generator pattern.
+	- **Default**: 2^31
+- **EnableIntSerdesNWLoopback**
+	- **Data Type**: bool
+	- **Description**: Enable/Disable serdes internal loopback.
+	- **Default**: false
+- **HostTxEqCtle**
+	- **Data Type**: uint8
+	- **Description**: Host interface TX deserializer equalization. LELRC CTLE LE gain code..
+	- **Default**: 18
+- **HostTxEqDfe**
+	- **Data Type**: uint8
+	- **Description**: Host interface TX deserializer equalization. s-DFE.
+	- **Default**: 0
+- **HostTxEqLfCtle**
+	- **Data Type**: uint8
+	- **Description**: Host interface TX deserializer equalization. LELPZRC LF-CTLE LFPZ gain code..
+	- **Default**: 0
+- **TxPRBSPattern**
+	- **Data Type**: string
+	- **Description**: PRBS pattern to use for checker.
+	- **Default**: 2^31
+- **HostRxSerializerTap0Delay**
+	- **Data Type**: uint8
+	- **Description**: Host RX Serializer tap 0 control.
+	- **Default**: 7
+- **HostRxSerializerTap0Gain**
+	- **Data Type**: uint8
+	- **Description**: Host RX Serializer tap 0 control.
+	- **Default**: 7
+- **EnableRxPRBS**
+	- **Data Type**: bool
+	- **Description**: Enable/Disable RX PRBS generation for all lanes of this client interface.
+	- **Default**: false
+- **EnableTxPRBSChecker**
+	- **Data Type**: bool
+	- **Description**: Enable/Disable TX PRBS checker for all lanes of this client interface.
+	- **Default**: false
+- **NwLaneTributaryToClntIntfMap**
+	- **Data Type**: uint8
+	- **Description**: Network lane/tributary id to map to client interface.
+- **TXFECDecDisable**
+	- **Data Type**: bool
+	- **Description**: 802.3bj FEC decoder enable/disable state for traffic from Host to DWDM Module.
+	- **Default**: false
+- **AdminState**
+	- **Data Type**: string
+	- **Description**: Administrative state of this client interface.
+	- **Default**: UP
+- **EnableHostLoopback**
+	- **Data Type**: bool
+	- **Description**: Enable/Disable loopback on all host lanes of this client interface.
+	- **Default**: false
+- **RXFECDecDisable**
+	- **Data Type**: bool
+	- **Description**: 802.3bj FEC decoder enable/disable state for traffic from DWDM module to Host.
+	- **Default**: false
+- **HostRxSerializerTap1Gain**
+	- **Data Type**: uint8
+	- **Description**: Host RX Serializer tap 1 control.
+	- **Default**: 7
+- **HostRxSerializerTap2Gain**
+	- **Data Type**: uint8
+	- **Description**: Host RX Serializer tap 2 control.
+	- **Default**: 15
+
+
+*state/DWDMModuleClntIntf*
+------------------------------------
+
+- **ClntIntfId**
+	- **Data Type**: uint8
+	- **Description**: DWDM Module client interface identifier.
+	- This parameter is key element.
+- **ModuleId**
+	- **Data Type**: uint8
+	- **Description**: DWDM Module identifier.
+	- This parameter is key element.
+- **PRBSTxErrCntLane1**
+	- **Data Type**: float64
+	- **Description**: Client interface host lane 1 PRBS TX Error count.
+- **PRBSTxErrCntLane2**
+	- **Data Type**: float64
+	- **Description**: Client interface host lane 2 PRBS TX Error count.
+- **PRBSTxErrCntLane3**
+	- **Data Type**: float64
+	- **Description**: Client interface host lane 3 PRBS TX Error count.
+- **PRBSTxErrCntLane0**
+	- **Data Type**: float64
+	- **Description**: Client interface host lane 0 PRBS TX Error count.
+
+

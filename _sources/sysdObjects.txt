@@ -26,6 +26,29 @@ SYSD Model Objects
 	- **Description**: System Description.
 
 
+*config/DpiRules*
+------------------------------------
+
+- **RuleFile**
+        - **Data Type**: []RuleFile 
+        - **Description**: All rules in specified rule file.
+- **Description**
+        - **Data Type**: string
+        - **Description**: Dpi RuleFile Description.
+
+
+*state/DpiRules*
+------------------------------------
+
+- **RuleFile**
+        - **Data Type**: []RuleFile
+        - **Description**: All rules in specified rule file.
+- **Description**
+        - **Data Type**: string
+        - **Description**: Dpi RuleFile Description.
+
+
+
 *config/SystemLogging*
 ------------------------------------
 

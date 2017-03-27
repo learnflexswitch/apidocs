@@ -11,6 +11,8 @@ FlexSwitch System Objects
    DaemonState Objects  <DaemonStateObjects.rst>
    SystemParam Objects  <SystemParamObjects.rst>
    SystemParamState Objects  <SystemParamStateObjects.rst>
+   DpiRules Objects  <DpiRulesObjects.rst>
+   DpiRulesState Objects <DpiRulesStateObjects.rst>
    SystemStatusState Objects  <SystemStatusStateObjects.rst>
    SystemSwVersionState Objects  <SystemSwVersionStateObjects.rst>
    XponderGlobal Objects  <XponderGlobalObjects.rst>
